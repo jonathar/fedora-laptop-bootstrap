@@ -49,6 +49,9 @@
 - name: Install neovim font
   copy: src=sauce_code_pro_nerd_font.ttf dest=$HOME/.fonts/sauce_code_pro_nerd_font.ttf
 
+- name: Remap capslock to ctrl
+  dconf: key=/org/gnome/desktop/input-sources/xkb-options value="['caps:ctrl_modifier']" state=present
+
 - name: Set terminal font
   dconf: key=/org/gnome/desktop/interface/monospace-font-name value="'SauceCodePro Nerd Font 16'" state=present
 
