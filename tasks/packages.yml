@@ -1,0 +1,17 @@
+---
+- name: Install packages
+  become: yes
+  dnf: name={{ item }} state=present
+  with_items:
+    - the_silver_searcher
+    - git
+    - zsh
+    - neovim
+    - gnome-tweak-tool
+    - libselinux-python
+    - golang
+    - direnv
+    - VirtualBox
+    - vagrant
+    - docker
+    - python2-psutil

@@ -1,0 +1,38 @@
+function _ruby_version() {
+  if {echo $fpath | grep -q "plugins/rvm"}; then
+    if {rvm gemdir | grep -q "@"}; then
+      echo "%{$fg[red]%}$(rvm_prompt_info)%{$reset_color%}"
+    fi
+  fi
+}
+
+cdpath=(~/dev/)
+
+export GOPATH=$HOME/dev/go
+export PATH=$GOPATH/bin:$HOME/bin:$PATH
+export CDPATH=.:$GOPATH/src/github.com:$CDPATH
+
+export EDITOR=nvim
+
+# Setup employer specific environment
+COMPANY_FILE="$HOME/.companyrc"
+if [ -f $COMPANY_FILE ]; then
+  . $COMPANY_FILE
+fi
+
+. ~/.aliasrc
+
+PYTHON_DIR=`python -m site --user-base`/bin
+if [ -d $PYTHON_DIR ]; then
+  export PATH=$PATH:$PYTHON_DIR
+fi
+
+if [ -d "~/Library/Python/3.5/" ]; then
+  # AWS cli python path
+  export PATH=$PATH:~/Library/Python/3.5/bin/
+  # Add userspace python bin/, prefer higher python versions
+  for dir in ~/Library/Python/*/bin/(On); do export PATH=$PATH:$dir; done
+fi
+
+# Direnv
+eval "$(direnv hook zsh)"

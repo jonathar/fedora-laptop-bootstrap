@@ -1,0 +1,9 @@
+---
+- name: Bootstrap linux laptop
+  hosts:
+    - 127.0.0.1
+  strategy: debug
+  gather_facts: no
+  tasks:
+    - include: tasks/packages.yml
+    - include: tasks/config.yml
