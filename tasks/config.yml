@@ -50,6 +50,12 @@
 - name: Install neovim font
   copy: src=sauce_code_pro_nerd_font.ttf dest=$HOME/.fonts/sauce_code_pro_nerd_font.ttf
 
+- name: Set terminal colorscheme to Solarized Dark
+  dconf: key={{item.key}} value="'{{item.value}}'" state=present
+  with_items:
+    - { 'key': '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/foreground-color', 'value': 'rgb(131,148,150)' }
+    - { 'key': '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color', 'value': 'rgb(0,43,54)' }
+
 - name: Remap capslock to ctrl
   dconf: key=/org/gnome/desktop/input-sources/xkb-options value="['caps:ctrl_modifier']" state=present
 
