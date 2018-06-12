@@ -207,3 +207,4 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
 let g:UltiSnipsSnippetsDir="~/.vim/snips"
+set clipboard+=unnamedplus
