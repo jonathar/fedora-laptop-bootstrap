@@ -9,6 +9,10 @@
     - aliasrc
     - gitconfig
 
+- name: Use vagrant without passwords
+  become: yes
+  command: sudo gpasswd -a ${USER} libvirt
+
 - name: Detect ohmyzsh
   stat: path=$HOME/.oh-my-zsh
   register: ohmyzsh_installed
