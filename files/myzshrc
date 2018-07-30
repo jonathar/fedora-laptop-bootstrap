@@ -36,3 +36,5 @@ fi
 
 # Direnv
 eval "$(direnv hook zsh)"
+
+export ANSIBLE_STDOUT_CALLBACK=debug
