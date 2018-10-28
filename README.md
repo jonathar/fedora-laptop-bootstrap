@@ -3,5 +3,5 @@
 ## Installation
 
 ```
-$> ansible-playbook -i local  site.yml
+$> ansible-playbook --ask-become-pass -i local site.yml
 ```
