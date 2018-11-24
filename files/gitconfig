@@ -1,3 +1,8 @@
+[user]
+  name = Jonathan R
+  user = jonathar
+  email = jonathar@users.noreply.github.com
+
 # Optimized for solarized colorscheme
 [color]
   diff = auto
