@@ -60,6 +60,9 @@
     - { 'key': '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/foreground-color', 'value': 'rgb(131,148,150)' }
     - { 'key': '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color', 'value': 'rgb(0,43,54)' }
 
+- name: Remove system theme colors
+  dconf: key='/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors' value='false' state=present
+
 - name: Remap capslock to ctrl
   dconf: key=/org/gnome/desktop/input-sources/xkb-options value="['caps:ctrl_modifier']" state=present
 
