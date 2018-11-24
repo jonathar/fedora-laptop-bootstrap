@@ -8,6 +8,7 @@
     - myzshrc
     - aliasrc
     - gitconfig
+    - zshrc
 
 - name: Use vagrant without passwords
   become: yes
@@ -20,9 +21,6 @@
 - name: Cloning oh-my-zsh
   git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
   when: ohmyzsh_installed.stat.exists == False
-
-- name: Creating new ~/.zshrc
-  copy: src=~/.oh-my-zsh/templates/zshrc.zsh-template dest=~/.zshrc
 
 - name: Load myzshrc
   lineinfile: path=$HOME/.zshrc regexp='^source ~/.myzshrc' line='source ~/.myzshrc'
