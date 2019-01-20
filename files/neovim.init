@@ -124,7 +124,7 @@ map <leader>sl :VtrSendLinesToRunner<CR>
 map <leader>sf :VtrSendFile<CR>
 map <leader>or :VtrOpenRunner{'orientation': 'h', 'percentage': 50}<CR>
 map <leader>ra :VtrAttachToPane<CR>
-map <leader>rm :VtrSendCommand(make clean all)<CR>
+map <leader>rm :VtrSendCommand<CR>
 map <leader>ut :GundoToggle<CR>
 let g:VtrUseVtrMaps = 1
 
