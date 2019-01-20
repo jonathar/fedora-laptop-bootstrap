@@ -10,6 +10,7 @@ call dein#add('Shougo/dein.vim')
 " </Required>
 
 " Plugins
+call dein#add('b4b4r07/vim-hcl')
 call dein#add('robbles/logstash.vim')
 call dein#add('diepm/vim-rest-console')
 call dein#add('Shougo/neosnippet.vim')
