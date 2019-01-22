@@ -34,6 +34,7 @@ if [ -d "~/Library/Python/3.5/" ]; then
   for dir in ~/Library/Python/*/bin/(On); do export PATH=$PATH:$dir; done
 fi
 
+PATH=$HOME/.local/bin/:$PATH
 # Direnv
 eval "$(direnv hook zsh)"
 
